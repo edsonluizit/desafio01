@@ -1,0 +1,16 @@
+.menu_header {
+    background: var(--gray-700);
+    color: #fff;
+
+    height: 12.5rem;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_header img {
+    width: 7.875rem;
+    height: 3rem
+}

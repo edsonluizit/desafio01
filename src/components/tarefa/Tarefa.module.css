@@ -1,0 +1,9 @@
+.tarefa {
+    color: var(--gray-100);
+    background: var(--gray-500);
+    border-radius: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    padding: 1rem
+}

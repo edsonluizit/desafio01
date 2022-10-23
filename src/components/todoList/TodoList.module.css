@@ -1,0 +1,55 @@
+* {
+    color: var(--gray-200)
+}
+
+.todoList {
+    display: flex;
+    flex-direction: column;
+    width: 736px;
+    margin: 0 auto;
+    margin-bottom: 1.5rem
+}
+
+.listContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.leftTop {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.leftTop p {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.top span {
+    background-color: var(--gray-400);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.8rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.top .rightTop {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.rightTop p {
+    color: var(--purple);
+    font-weight: 700;
+}
