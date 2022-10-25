@@ -1,19 +1,20 @@
 import styles from './Tarefa.module.css'
-import Check from '../../assets/check.svg'
-import Trash from '../../assets/trash.svg'
+import { CheckCircle, Circle, Trash } from 'phosphor-react'
 
 export function Tarefa() {
     return (
         <div className={styles.tarefa}>
-            <div className={styles.iconCheck}>
-                <img src={Check} alt="" />
-            </div>
+
+            <button className={styles.iconCheck} title="select">
+                <Circle />
+            </button>
+
             <div className={styles.tarefaContent}>
-                Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.
+                <p> Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
             </div>
-            <div className={styles.trash}>
-                <img src={Trash} alt="" />
-            </div>
+            <button className={styles.iconTrash}>
+                <Trash />
+            </button>
         </div>
     )
 }

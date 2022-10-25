@@ -1,13 +1,10 @@
-* {
-    color: var(--gray-200)
-}
-
 .todoList {
     display: flex;
     flex-direction: column;
     width: 736px;
     margin: 0 auto;
-    margin-bottom: 1.5rem
+    margin-bottom: 1.5rem;
+    color: var(--gray-200);
 }
 
 .listContent {

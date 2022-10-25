@@ -1,9 +1,37 @@
 .tarefa {
-    color: var(--gray-100);
     background: var(--gray-500);
     border-radius: 0.5rem;
+
     display: flex;
+    align-items: flex-start;
     gap: 0.5rem;
+
     margin-bottom: 0.75rem;
     padding: 1rem
+}
+
+.tarefa .tarefaContent p {
+    color: var(--gray-100);
+}
+
+.tarefa button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+
+}
+
+button:first-child {
+    color: var(--blue);
+}
+
+button:last-child {
+    color: var(--gray-100)
+}
+
+.tarefa button svg {
+    margin-top: 0.15rem;
+    font-size: 1rem;
+
 }
