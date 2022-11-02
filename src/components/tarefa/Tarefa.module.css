@@ -1,4 +1,5 @@
-.tarefa {
+.tarefa,
+.tarefaChecked {
     background: var(--gray-500);
     border-radius: 0.5rem;
 
@@ -10,42 +11,28 @@
     padding: 1rem
 }
 
-.tarefa .tarefaContent p {
+.tarefaContent p {
     color: var(--gray-100);
 }
 
-.tarefa button {
+.tarefaChecked .tarefaContent p {
+    color: var(--danger);
+    text-decoration: line-through;
+}
+
+button {
     background: transparent;
+    color: var(--gray-100);
     border: 0;
     border-radius: 0.25rem;
     cursor: pointer;
     display: flex;
-    color: var(--gray-100)
 }
 
-.tarefa input[type="checkbox"] {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 1rem;
-    height: 1rem;
-    border: 2px solid var(--blue);
-    border-radius: 50%;
-    background: transparent;
-    cursor: pointer;
-    position: relative;
-}
-
-button:hover {
-    color: var(--danger);
-}
-
-button:first-child {
-    color: var(--blue);
-}
-
-
-.tarefa button svg {
-    margin-top: 0.15rem;
+button:last-child {
     font-size: 1rem;
+}
 
+button:last-child:hover {
+    color: var(--danger);
 }

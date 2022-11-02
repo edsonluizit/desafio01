@@ -1,17 +1,38 @@
 import styles from './Tarefa.module.css'
-import { CheckCircle, Circle, Trash } from 'phosphor-react'
+import { Trash } from 'phosphor-react'
+import React, { useState } from 'react';
 
-export function Tarefa() {
+export function Tarefa(props: Number | string) {
+    const [isChecked, setIsChecked] = useState<boolean>(false)
+    const [changeIcon, setChangeIcon] = useState<string>("../src/assets/check.svg")
+    const [classNameCheck, setClassNameCheck] = useState(styles.tarefa)
+
+    function handleCheckBox(event: React.MouseEvent) {
+        console.log(isChecked)
+        if (isChecked) {
+            setIsChecked(false)
+            setChangeIcon("../src/assets/check.svg");
+            setClassNameCheck(styles.tarefa)
+        } else {
+            setIsChecked(true)
+            setChangeIcon("../src/assets/checked.svg")
+            setClassNameCheck(styles.tarefaChecked)
+        }
+        console.log("viva");
+        console.log(isChecked)
+    }
     return (
-        <div className={styles.tarefa}>
-
-            <input
-                title='checkbox'
-                type="checkbox"
-            />
+        <div className={classNameCheck}>
+            <div>
+                <button type="button"
+                    onClick={handleCheckBox}
+                >
+                    <img src={changeIcon} alt="" />
+                </button>
+            </div>
 
             <div className={styles.tarefaContent}>
-                <p> Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+                <p> {props.toDos.tarefa}</p>
             </div>
             <button
                 type='button'

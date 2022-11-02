@@ -2,6 +2,32 @@ import { CreateTodo } from '../createTodo/CreateTodo'
 import { Tarefa } from '../tarefa/Tarefa'
 import styles from './TodoList.module.css'
 
+const toDo = [
+    {
+        id: 0,
+        tarefa: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer",
+    },
+    {
+        id: 1,
+        tarefa: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer",
+    },
+    {
+        id: 2,
+        tarefa: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer",
+    },
+    {
+        id: 3,
+        tarefa: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer",
+    },
+    {
+        id: 4,
+        tarefa: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer",
+    },
+    {
+        id: 5,
+        tarefa: "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer",
+    },
+]
 export function TodoList() {
     return (
         <div className={styles.todoList}>
@@ -18,10 +44,14 @@ export function TodoList() {
                         <span>2 de 6</span>
                     </div>
                 </div>
-                <Tarefa />
-                <Tarefa />
-                <Tarefa />
-                <Tarefa />
+                {toDo.map(toDos => {
+                    return (
+                        <Tarefa
+                            id={toDos.id}
+                            tarefa={toDos.tarefa}
+                        />
+                    )
+                })}
             </div>
         </div>
     )
