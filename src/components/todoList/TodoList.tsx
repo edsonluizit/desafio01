@@ -3,7 +3,7 @@
 import styles from './TodoList.module.css'
 import { Tarefa } from '../tarefa/Tarefa'
 import iconPlus from '../../assets/iconPlus.svg'
-import { useState } from 'react'
+import { FormEvent, InputHTMLAttributes, useState } from 'react'
 
 interface toDosInterface {
     id: number;
@@ -37,18 +37,23 @@ interface toDosInterface {
 //    },
 //]
 export function TodoList() {
-    const [toDos, setToDos2] = useState([{ id: 0, tarefa: '' }])
+    const [toDos, setToDos] = useState([{ key: 0, tarefa: "" }])
 
 
 
-    function handleCreateNewTodo() {
-        event?.preventDefault()
-        //const newToDos = event.target.
-
-        setToDos2([...toDos, { id: toDos.length + 1, tarefa: event?.target.inputCreateTodo.value }])
-        //console.log(toDos);
-
+    function handleCreateNewTodo(event: React.FormEventHandler<HTMLFormElement> | React.DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>) {
+        event.preventDefault()
+        const newToDos = event.target.inputCreateTodo.value
+        if (newToDos !== '') {
+            setToDos([...toDos, { key: toDos.length + 1, tarefa: newToDos }])
+        }
+        event.target.inputCreateTodo.value = ''
     }
+
+    function deleteTodo(Todokey: number) {
+        console.log('okok ', Todokey)
+    }
+
 
     return (
         <div className={styles.todoList}>
@@ -75,12 +80,15 @@ export function TodoList() {
                     </div>
                 </div>
                 {toDos.map(todo => {
-                    return (
-                        <Tarefa
-                            id={todo.id}
-                            tarefa={todo.tarefa}
-                        />
-                    )
+                    if (todo.tarefa !== "") {
+                        return (
+                            <Tarefa
+                                key={todo.key}
+                                tarefa={todo.tarefa}
+                                deleteTodo={deleteTodo}
+                            />
+                        )
+                    }
                 })}
             </div>
         </div>

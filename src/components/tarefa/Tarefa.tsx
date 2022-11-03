@@ -8,6 +8,11 @@ export function Tarefa(props: {
     tarefa: string
 }) {
 
+    function deleteTarefa() {
+        console.log('delete')
+
+    }
+
     const [isChecked, setIsChecked] = useState<boolean>(false)
     const [changeIcon, setChangeIcon] = useState<string>("../src/assets/check.svg")
     const [classNameCheck, setClassNameCheck] = useState(styles.tarefa)
@@ -37,11 +42,12 @@ export function Tarefa(props: {
             </div>
 
             <div className={styles.tarefaContent}>
-                <p>{props.id} - {props.tarefa}</p>
+                <p>{props.tarefa}</p>
             </div>
             <button
                 type='button'
-                title='delete'>
+                title='delete'
+                onClick={deleteTarefa}>
                 <Trash />
             </button>
         </div>
