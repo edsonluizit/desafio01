@@ -2,7 +2,12 @@ import styles from './Tarefa.module.css'
 import { Trash } from 'phosphor-react'
 import React, { useState } from 'react';
 
-export function Tarefa(props: Number | string) {
+
+export function Tarefa(props: {
+    id: number;
+    tarefa: string
+}) {
+
     const [isChecked, setIsChecked] = useState<boolean>(false)
     const [changeIcon, setChangeIcon] = useState<string>("../src/assets/check.svg")
     const [classNameCheck, setClassNameCheck] = useState(styles.tarefa)
@@ -32,7 +37,7 @@ export function Tarefa(props: Number | string) {
             </div>
 
             <div className={styles.tarefaContent}>
-                <p> {props.toDos.tarefa}</p>
+                <p>{props.id} - {props.tarefa}</p>
             </div>
             <button
                 type='button'

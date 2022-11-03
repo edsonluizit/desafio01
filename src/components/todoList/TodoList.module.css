@@ -1,3 +1,48 @@
+.createTodo {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: -1.75rem;
+    margin-bottom: 4.2rem;
+}
+
+.createTodo input {
+    border: none;
+    border-radius: 0.5rem;
+    width: 39.875rem;
+    height: 3.375rem;
+    background: var(--gray-400);
+    color: var(--gray-200);
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+.createTodo input:focus {
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.createTodo button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    width: 5.625rem;
+    height: 3.375rem;
+    background: var(--blueDark);
+    color: var(--gray-100);
+    font-weight: 700;
+
+}
+
+.createTodo button:focus {
+    color: var(--gray-400);
+}
+
 .todoList {
     display: flex;
     flex-direction: column;
