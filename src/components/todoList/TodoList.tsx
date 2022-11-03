@@ -50,8 +50,15 @@ export function TodoList() {
         event.target.inputCreateTodo.value = ''
     }
 
-    function deleteTodo(Todokey: number) {
-        console.log('okok ', Todokey)
+    function deleteTodo(todokey: number) {
+        console.log('okok ', todokey)
+        const todoListWithoutDeleteOn = toDos.filter(todo => {
+            if (todo.key !== todokey) {
+                return todo
+            }
+        })
+        setToDos(todoListWithoutDeleteOn)
+
     }
 
 
@@ -85,7 +92,7 @@ export function TodoList() {
                             <Tarefa
                                 key={todo.key}
                                 tarefa={todo.tarefa}
-                                deleteTodo={deleteTodo}
+                                onDeleteTodo={deleteTodo}
                             />
                         )
                     }

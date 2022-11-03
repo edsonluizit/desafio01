@@ -4,12 +4,13 @@ import React, { useState } from 'react';
 
 
 export function Tarefa(props: {
-    id: number;
+    key: number;
     tarefa: string
 }) {
 
-    function deleteTarefa() {
-        console.log('delete')
+    function handleDeleteTarefa() {
+
+        props.onDeleteTodo(props.key)
 
     }
 
@@ -47,7 +48,7 @@ export function Tarefa(props: {
             <button
                 type='button'
                 title='delete'
-                onClick={deleteTarefa}>
+                onClick={handleDeleteTarefa}>
                 <Trash />
             </button>
         </div>
