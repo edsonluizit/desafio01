@@ -1,5 +1,4 @@
 
-
 import styles from './TodoList.module.css'
 import { Tarefa } from '../tarefa/Tarefa'
 import iconPlus from '../../assets/iconPlus.svg'
@@ -37,23 +36,23 @@ interface toDosInterface {
 //    },
 //]
 export function TodoList() {
-    const [toDos, setToDos] = useState([{ key: 0, tarefa: "" }])
+    const [toDos, setToDos] = useState([{ id: 0, tarefa: "" }])
 
 
 
-    function handleCreateNewTodo(event: React.FormEventHandler<HTMLFormElement> | React.DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>) {
+    function handleCreateNewTodo(event: React.FormEventHandler<HTMLFormElement> | React.DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> | React.MouseEvent<HTMLButtonElement>) {
         event.preventDefault()
         const newToDos = event.target.inputCreateTodo.value
         if (newToDos !== '') {
-            setToDos([...toDos, { key: toDos.length + 1, tarefa: newToDos }])
+            setToDos([...toDos, { id: toDos.length + 1, tarefa: newToDos }])
         }
         event.target.inputCreateTodo.value = ''
     }
 
-    function deleteTodo(todokey: number) {
-        console.log('okok ', todokey)
+    function deleteTodo(todoid: number) {
+        console.log('okok ', todoid)
         const todoListWithoutDeleteOn = toDos.filter(todo => {
-            if (todo.key !== todokey) {
+            if (todo.id !== todoid) {
                 return todo
             }
         })
@@ -90,7 +89,8 @@ export function TodoList() {
                     if (todo.tarefa !== "") {
                         return (
                             <Tarefa
-                                key={todo.key}
+                                key={todo.id}
+                                id={todo.id}
                                 tarefa={todo.tarefa}
                                 onDeleteTodo={deleteTodo}
                             />

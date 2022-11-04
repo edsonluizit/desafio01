@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 
 
 export function Tarefa(props: {
-    key: number;
+    id: number;
     tarefa: string
 }) {
 
     function handleDeleteTarefa() {
-
-        props.onDeleteTodo(props.key)
+        console.log(props.id)
+        props.onDeleteTodo(props.id)
 
     }
 
